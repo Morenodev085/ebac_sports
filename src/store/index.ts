@@ -1,7 +1,7 @@
 import { configureStore, Store } from "@reduxjs/toolkit";
 
 import carrinhoReducer from './reducers/carrinho'
-
+import { favoritar } from "./reducers/favorito";
 import api from "../services/api";
 
 export const store = configureStore({
@@ -11,7 +11,6 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(api.middleware)
-
 
 })
 
