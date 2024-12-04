@@ -13,4 +13,4 @@ export const store = configureStore({
     getDefaultMiddleware().concat(api.middleware),  // Garantindo a concatenação correta do middleware
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootReducer = ReturnType<typeof store.getState>;
