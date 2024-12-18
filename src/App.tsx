@@ -16,22 +16,22 @@ export type Produto = {
 }
 
 function App() {
-  // Usando Redux para acessar o estado de favoritos e a função de adicionar aos favoritos
-  const favoritos = useSelector((state: any) => state.favoritos.itens)
-  const dispatch = useDispatch()
+  // // Usando Redux para acessar o estado de favoritos e a função de adicionar aos favoritos
+  // // const favoritos = useSelector((state: any) => state.favoritos.itens)
+  // // const dispatch = useDispatch()
 
-  // Função de favoritar que dispara a ação do Redux
-  const favoritar = (produto: ProdutoType) => {
-    dispatch(adicionarFav(produto))  // Adiciona aos favoritos no Redux
-  }
+  // // Função de favoritar que dispara a ação do Redux
+  // const favoritar = (produto: ProdutoType) => {
+  //   dispatch(adicionarFav(produto))  // Adiciona aos favoritos no Redux
+  // }
 
   return (
     <Provider store={store}>
       <GlobalStyle />
       <div className="container">
         {/* Passando os favoritos e a função favoritar para os componentes */}
-        <Header favoritos={favoritos} />
-        <Produtos favoritos={favoritos} favoritar={favoritar} />
+        <Header />
+        <Produtos />
       </div>
     </Provider>
   )

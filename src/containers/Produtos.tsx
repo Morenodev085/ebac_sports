@@ -4,11 +4,13 @@ import { useGetProdutosQuery } from '../services/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { adicionarFav } from '../store/reducers/favoritos'
 import * as S from './styles'
+import { RootReducer } from '../store'
+
 
 // Componente de Produtos
 const ProdutosComponent = () => {
   // Definindo a tipagem do estado usando o tipo correto para o Redux
-  const favoritos = useSelector((state: { favoritos: { itens: ProdutoType[] } }) => state.favoritos.itens)
+  const favoritos = useSelector((state: RootReducer ) => state.favoritar.itens)
 
   // Usando o hook useDispatch para despachar ações
   const dispatch = useDispatch()
@@ -37,7 +39,6 @@ const ProdutosComponent = () => {
             key={produto.id}
             produto={produto}
             estaNosFavoritos={produtoEstaNosFavoritos(produto)}
-            favoritar={() => handleFavoritar(produto)} // Usando a função definida antes
           />
         ))}
       </S.Produtos>
